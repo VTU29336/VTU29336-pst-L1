@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.function.BiFunction;
+
+public class Main {
+
+    public static int sumLastDigit(int a, int b) {
+        return (a % 10) + (b % 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        // Method Reference
+        BiFunction<Integer, Integer, Integer> sum = Main::sumLastDigit;
+
+        int result = sum.apply(num1, num2);
+
+        System.out.println("Sum of last digits = " + result);
+
+        sc.close();
+    }
+}
